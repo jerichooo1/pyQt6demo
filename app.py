@@ -101,21 +101,19 @@ class Window(QWidget):
         # Action Buttons
         buttons_layout = QHBoxLayout()
         self.btn_scan = QPushButton("Scan System")
-        self.btn_rescan = QPushButton("Rescan")
         self.btn_pdf = QPushButton("Export to PDF")
         self.btn_txt = QPushButton("Export to Plain Text")
         self.btn_pdf.setEnabled(False)
         self.btn_txt.setEnabled(False)
-        self.btn_rescan.setEnabled(False)
+        
 
         self.btn_scan.clicked.connect(self.start_scan)
         self.btn_txt.clicked.connect(self.export_to_txt)
         self.btn_pdf.clicked.connect(self.export_to_pdf) 
-        self.btn_rescan.clicked.connect(self.re_scan)
+        
 
 
         buttons_layout.addWidget(self.btn_scan)
-        buttons_layout.addWidget(self.btn_rescan)
         buttons_layout.addWidget(self.btn_pdf)
         buttons_layout.addWidget(self.btn_txt)
         layout.addLayout(buttons_layout)
@@ -270,7 +268,7 @@ class Window(QWidget):
         self.btn_clean.setEnabled(True)
         self.btn_pdf.setEnabled(True)
         self.btn_txt.setEnabled(True)
-        self.btn_rescan(True)
+        
 
     
     # --- Cleaning ---
